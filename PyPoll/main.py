@@ -1,8 +1,8 @@
 import os
 import csv
 
-
-csvpath = os.path.join('Resources','election_data.csv')
+dirname = os.path.dirname(__file__)
+csvpath = os.path.join(dirname,'Resources','election_data.csv')
 
 results = {}
 totalvotes = 0
