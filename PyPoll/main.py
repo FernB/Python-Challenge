@@ -9,7 +9,7 @@ totalvotes = 0
 
 with open(csvpath) as csvfile:
     reader = csv.reader(csvfile, delimiter = ",")
-    next(reader)
+    csv_header = next(reader)
     
     for row in reader:
         totalvotes = totalvotes + 1
