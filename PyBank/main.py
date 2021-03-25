@@ -2,7 +2,8 @@ import os
 import csv
 
 #creates path from within PyBank Resources folder
-csvpath = os.path.join('Resources','budget_data.csv')
+dirname = os.path.dirname(__file__)
+csvpath = os.path.join(dirname,'Resources','budget_data.csv')
 
 #setting all loop counters to empty or 0
 totalmonths = 0
