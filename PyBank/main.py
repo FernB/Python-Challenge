@@ -19,7 +19,7 @@ total = 0
 with open(csvpath) as csvfile:
     reader = csv.reader(csvfile, delimiter = ",")
     #skips the headers
-    next(reader)
+    csv_header = next(reader)
     #loops through each row of csv file
     for row in reader:
         #counts months and tallys net profit/loss but ensures first row isn't counted towards the average change 
