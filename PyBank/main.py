@@ -42,7 +42,7 @@ with open(csvpath) as csvfile:
                 minchange = change
                 mindate = row[0]       
 #creates path for txt file within PyBank Analysis folder
-txtpath = os.path.join('Analysis','financial_analysis.txt')
+txtpath = os.path.join(dirname,'Analysis','financial_analysis.txt')
 #opens file to write and will overwrite existing content if analysis has been previously performed
 File = open(txtpath,"w+")
 #prints analysis to file
