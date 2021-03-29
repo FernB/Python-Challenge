@@ -20,7 +20,7 @@ with open(csvpath) as csvfile:
             counter = results[row[2]] + 1
             results[row[2]] = counter            
 
-txtpath = os.path.join('Analysis','results.txt')
+txtpath = os.path.join(dirname,'Analysis','results.txt')
 File = open(txtpath,"w+")
 print("Election Results\n-----------------", file = File)
 print(f"Total Votes: {totalvotes}\n-----------------", file = File)
