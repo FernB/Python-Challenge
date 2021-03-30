@@ -1,3 +1,4 @@
+#dependancies
 import os
 import csv
 
@@ -19,9 +20,9 @@ total = 0
 #opens csv and returns object containing rows
 with open(csvpath) as csvfile:
     reader = csv.reader(csvfile, delimiter = ",")
-    #skips the headers
+    #skips the headers and stores for future reference
     csv_header = next(reader)
-    #loops through each row of csv file
+    #loops through each row
     for row in reader:
         #counts months and tallys net profit/loss but ensures first row isn't counted towards the average change 
         if totalmonths == 0:
@@ -43,14 +44,12 @@ with open(csvpath) as csvfile:
                 mindate = row[0]       
 #creates path for txt file within PyBank Analysis folder
 txtpath = os.path.join(dirname,'Analysis','financial_analysis.txt')
-#opens file to write and will overwrite existing content if analysis has been previously performed
+#opens file to read/write and will overwrite existing content if analysis has been previously performed
 File = open(txtpath,"w+")
 #prints analysis to file
 print(f"Financial Analysis\n---------------------------\nTotal Months: {totalmonths}\nTotal: ${total}\nAverage Change: ${changetotal/(totalmonths-1):.2f}\nGreatest Increase in Profits: {maxdate} (${maxchange})\nGreatest Decrease in Profits: {mindate} (${minchange})", file = File)
 #prints content of file to command line, starting from begining of file
 File.seek(0)
 print(File.read())
-
-
 
 
